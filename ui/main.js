@@ -23,13 +23,13 @@ img.onclick=function(){
 };
 */
 var button = document.getElementById('counter');
-//var counter=0;
+                                                                 //var counter=0;
 button.onclick=function(){
-    //Create a request to the counter end point
+                                                         //Create a request to the counter end point
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function(){
-        if(request === XMLHttpRequest.DONE){
+        if(request.readyState === XMLHttpRequest.DONE){
             //Take some action
             if(request.status === 200){
                 var counter = request.responseText;
