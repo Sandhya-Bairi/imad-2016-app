@@ -23,9 +23,24 @@ img.onclick=function(){
 };
 */
 var button = document.getElementById('counter');
-var counter=0;
+//var counter=0;
 button.onclick=function(){
-    counter= counter+1;
-    var span = document.getElementById('count');
-    span.innerHTML = counter.toString();
-}
+    //Create a request to the counter end point
+    var request = XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        if(request === XMLHttpRequest.DONE){
+            //Take some action
+            if(request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+        //not done yet
+    };
+    //counter= counter+1;
+    //Make the request
+    request.open('GET','http://sandhya-bairi.imad.hasura-app.io/counter',true);
+    request.send(null);
+};
