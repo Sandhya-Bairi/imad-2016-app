@@ -46,8 +46,7 @@ button.onclick=function(){
 };
 
 //Submit name
-var nameInput=document.getElementById("name");
-var name=nameInput.value;
+
 var submit= document.getElementById("submit_btn");
 submit.onclick = function(){
 //Make a request to the server and send the name
@@ -70,6 +69,8 @@ submit.onclick = function(){
         }
         //not done yet
     };
+    var nameInput=document.getElementById("name");
+    var name=nameInput.value;
     //Make the request
     request.open('GET','http://sandhya-bairi.imad.hasura-app.io/submit-name?name='+name ,true);
     request.send(null);
