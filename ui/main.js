@@ -48,7 +48,7 @@ button.onclick=function(){
 //Submit name
 var nameInput=document.getElementById("name");
 var name=nameInput.value;
-var submit= document.getElementById("submut_btn");
+var submit= document.getElementById("submit_btn");
 submit.onclick = function(){
 //Make a request to the server and send the name
 
@@ -60,7 +60,7 @@ submit.onclick = function(){
     {
         list+= "<li>"+names[i]+"</li>";
     }
-    var ul=document.getElementById(nameList);
+    var ul=document.getElementById('nameList');
     ul.innerHTML=list;
 
 };
