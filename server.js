@@ -87,8 +87,9 @@ app.get('/counter',function(req,res){
     counter = counter + 1;
     res.send(counter.toString());
 });
+
 var names=[];
-app.get('/submit-name/:name',function(req,res){//query parameter: URL = /submit-name?name=XXXXX
+app.get('/submit-name',function(req,res){//query parameter: URL = /submit-name?name=XXXXX
    //Get the name from request object
    var name = req.query.name;
    
@@ -96,6 +97,7 @@ app.get('/submit-name/:name',function(req,res){//query parameter: URL = /submit-
    //JSON-javascript object notation conerts javascript objects into string
    res.send(JSON.stringify(names));
 });
+
 app.get('/:articleName',function(req,res){
     //articleName == article-one
     //articles[articleName] == {}content object for articleName
